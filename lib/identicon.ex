@@ -6,6 +6,16 @@ defmodule Identicon do
   def main(input) do
     input
     |> hash_input
+    |> pick_color
+    |> build_grid
+  end
+
+  def build_grid(image) do
+
+  end
+
+  def pick_color(%Identicon.Image{hex: [r,g,b | _]} = image) do
+    %Identicon.Image{image | color: {r, g, b} }
   end
 
   def hash_input(input) do
